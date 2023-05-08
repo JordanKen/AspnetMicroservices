@@ -1,8 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D5559622-42FD-4B63-A85B-7F3C20325DD5}"
+	ProjectSection(SolutionItems) = preProject
+		Services\docker-compose.yml = Services\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{750A230B-4917-4F7C-8F59-24831320040C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{33F837A6-A5FD-4F3D-BA35-CE667F066A49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{7A2878D0-4737-4F04-A581-C628CBFCD62A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{750A230B-4917-4F7C-8F59-24831320040C} = {D5559622-42FD-4B63-A85B-7F3C20325DD5}
+		{33F837A6-A5FD-4F3D-BA35-CE667F066A49} = {750A230B-4917-4F7C-8F59-24831320040C}
+		{7A2878D0-4737-4F04-A581-C628CBFCD62A} = {D5559622-42FD-4B63-A85B-7F3C20325DD5}
+		{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA} = {7A2878D0-4737-4F04-A581-C628CBFCD62A}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33F837A6-A5FD-4F3D-BA35-CE667F066A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F837A6-A5FD-4F3D-BA35-CE667F066A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F837A6-A5FD-4F3D-BA35-CE667F066A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F837A6-A5FD-4F3D-BA35-CE667F066A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFD4B6E-2A39-40A7-AA99-2E969BCF08BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
