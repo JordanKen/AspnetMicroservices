@@ -10,8 +10,38 @@ services:
       - mongo_data:/data/db
     ports:
       - "27017:27017"
-    networks:
-      - matoa
+
+  discountdb:
+    image: postgres
+    container_name: discountdb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=DiscountDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+        
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dkjsoft@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+      
+  basketdb:
+    image: redis
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
          
   
   catalog.api:
@@ -27,11 +57,23 @@ services:
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
     depends_on:
       - catalogdb
-    networks:
-      - matoa
+
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    container_name: basketapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "CacheSettings:ConnectionString=basketdb:6379"
+    ports:
+      - "8001:80"
+    build:
+      context: .
+      dockerfile: Services/Basket/Basket.API/Dockerfile
+    depends_on: 
+      - basketdb
+
     
 volumes:
   mongo_data:
-networks:
-  matoa:
-    driver: bridge
+  postgres_data:
+  pgadmin_data:
