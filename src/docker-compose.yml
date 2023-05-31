@@ -71,6 +71,20 @@ services:
       dockerfile: Services/Basket/Basket.API/Dockerfile
     depends_on: 
       - basketdb
+    
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discount
+    container_name: discountapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=admin;Password=password;"
+    ports:
+      - "8002:80"
+    build:
+      context: .
+      dockerfile: Services/Discount/Discount.API/Dockerfile
+    depends_on:
+      - discountdb
 
     
 volumes:
