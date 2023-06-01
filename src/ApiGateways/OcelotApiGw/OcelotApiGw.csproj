@@ -5,20 +5,18 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>146a0aba-cfe1-4b0a-84b2-0e92aa236cb6</UserSecretsId>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
     <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
-        <PackageReference Include="Dapper" Version="2.0.123" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
-        <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="..\..\..\.dockerignore">
+      <Content Include="..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Ocelot" Version="19.0.2" />
     </ItemGroup>
 
 </Project>

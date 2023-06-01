@@ -7,11 +7,13 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
         <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,4 +22,13 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Remove="Protos\discount.proto" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Protobuf Include="..\..\Discount\Discount.Grpc\Protos\discount.proto" GrpcServices="Client">
+        <Link>Protos\discount.proto</Link>
+      </Protobuf>
+    </ItemGroup>
 </Project>

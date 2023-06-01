@@ -17,7 +17,7 @@ builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
 var app = builder.Build();
 app.MigrateDatabase<Program>();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.x`
 app.MapGrpcService<DiscountService>();
 app.MapGet("/",
     () =>

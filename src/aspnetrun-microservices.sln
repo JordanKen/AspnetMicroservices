@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D5559622-42FD-4B63-A85B-7F3C20325DD5}"
 	ProjectSection(SolutionItems) = preProject
 		Services\docker-compose.yml = Services\docker-compose.yml
@@ -19,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Services\Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Grpc", "Services\Discount\Discount.Grpc\Discount.Grpc.csproj", "{0F45DB38-81C6-4B3F-867B-738539EC6F4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{81CFC956-B682-4E1D-948A-FDBF0C2B3BE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGw", "ApiGateways\OcelotApiGw\OcelotApiGw.csproj", "{27011327-1EA7-43CE-B6BE-B27734600890}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +37,7 @@ Global
 		{994CAB63-D552-4381-82D9-12BDAFE118EA} = {D5559622-42FD-4B63-A85B-7F3C20325DD5}
 		{F4742A21-CC72-4BBD-9E21-591BFF34B7A0} = {994CAB63-D552-4381-82D9-12BDAFE118EA}
 		{0F45DB38-81C6-4B3F-867B-738539EC6F4D} = {994CAB63-D552-4381-82D9-12BDAFE118EA}
+		{27011327-1EA7-43CE-B6BE-B27734600890} = {81CFC956-B682-4E1D-948A-FDBF0C2B3BE1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{33F837A6-A5FD-4F3D-BA35-CE667F066A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -50,5 +56,9 @@ Global
 		{0F45DB38-81C6-4B3F-867B-738539EC6F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F45DB38-81C6-4B3F-867B-738539EC6F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F45DB38-81C6-4B3F-867B-738539EC6F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27011327-1EA7-43CE-B6BE-B27734600890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27011327-1EA7-43CE-B6BE-B27734600890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27011327-1EA7-43CE-B6BE-B27734600890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27011327-1EA7-43CE-B6BE-B27734600890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
